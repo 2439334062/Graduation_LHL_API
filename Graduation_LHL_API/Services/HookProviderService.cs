@@ -19,7 +19,7 @@ namespace Graduation_LHL_API.Services
         public override Task<LoadedResponse> OnProviderLoaded(ProviderLoadedRequest request, ServerCallContext context)
         {
 
-            Console.WriteLine("1``");
+            Console.WriteLine("1`你好`");
             Console.WriteLine(request);
             HookSpec[] specs =
             {
