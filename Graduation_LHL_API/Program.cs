@@ -1,5 +1,7 @@
 
+using Graduation_LHL_API.IServices;
 using Graduation_LHL_API.Services;
+using SqlSugar;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,8 +12,19 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+//加载配置文件
+var conBuilder = new ConfigurationBuilder()
+    .SetBasePath(Directory.GetCurrentDirectory())
+    .AddJsonFile("appsettings.json");
+var config = conBuilder.Build();
+
+//添加接口
+builder.Services.AddTransient<IUserService,UserService>();
+
 builder.Services.AddGrpc();//添加grpc
 var app = builder.Build();
+
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
