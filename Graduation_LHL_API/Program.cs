@@ -23,9 +23,12 @@ var conBuilder = new ConfigurationBuilder()
 var config = conBuilder.Build();
 
 var configuration = builder.Configuration;
-
 //添加接口
 builder.Services.AddTransient<IUserService,UserService>();
+builder.Services.AddScoped<IRegionService, RegionService>();
+
+builder.Services.AddHttpContextAccessor();
+
 
 builder.Services.AddGrpc();//添加grpc
 

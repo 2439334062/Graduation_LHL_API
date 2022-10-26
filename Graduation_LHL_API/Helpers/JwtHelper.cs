@@ -41,7 +41,7 @@ namespace Graduation_LHL_API.Helpers
                 _configuration["Jwt:Audience"],   //Audience
                 claims,                          //Claims,
                 DateTime.Now,                    //notBefore
-                DateTime.Now.AddSeconds(30),    //expires
+                DateTime.Now.AddDays(1),    //expires
                 signingCredentials               //Credentials
             );
 
