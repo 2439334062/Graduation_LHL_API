@@ -2,12 +2,21 @@
 
 namespace Graduation_LHL_API.Entity
 {
+    /// <summary>
+    /// 
+    ///</summary>
     [SugarTable("userroles")]
-    public class UserRole
+    public class Userrole
     {
-        [SugarColumn(IsPrimaryKey = true)]
+        /// <summary>
+        ///  
+        ///</summary>
+        [SugarColumn(ColumnName = "UserId", IsPrimaryKey = true)]
         public int UserId { get; set; }
-        [SugarColumn(IsPrimaryKey = true)]
+        /// <summary>
+        ///  
+        ///</summary>
+        [SugarColumn(ColumnName = "RoleId", IsPrimaryKey = true)]
         public int RoleId { get; set; }
     }
 }

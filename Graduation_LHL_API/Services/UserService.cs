@@ -22,6 +22,19 @@ namespace Graduation_LHL_API.Services
             }
             return false;            
         }
+        /// <summary>
+        /// 查找对应姓名
+        /// </summary>
+        /// <param name="username"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public async Task<User> FindByEmailAsync(string  Email)
+        {
+            var result = await SqlSugarHelper.Db.Queryable<User>().Where(u => u.Email == Email).ToListAsync();
+     
+            return result.FirstOrDefault();            
+
+        }
 
         public async Task<bool> LoginAsync(string username, string password)
         {

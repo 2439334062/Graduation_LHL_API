@@ -9,5 +9,7 @@ namespace Graduation_LHL_API.IServices
 
         Task<Boolean> UpdateAsync(User user,string password);
 
+        Task<User> FindByEmailAsync(string username);
+
     }
 }
