@@ -19,11 +19,14 @@ namespace Graduation_LHL_API.Entity
         ///  
         ///</summary>
          [SugarColumn(ColumnName="ClientName"    )]
-         public string ClientName { get; set; }
+         public Guid ClientName { get; set; }
         /// <summary>
         ///  
         ///</summary>
-         [SugarColumn(ColumnName="ClientPassword"    )]
-         public string ClientPassword { get; set; }
+         [SugarColumn(ColumnName= "ConnPassword")]
+         public string ConnPassword { get; set; }
+
+        [SugarColumn(ColumnName = "ConnName")]
+        public string ConnName { get; set; }
     }
 }
